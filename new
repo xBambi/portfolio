@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>Portfolio</title>
+<link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet"> 
+
+<style>
+/*
+colors
+#17bebb aqua
+#028090 navy
+#00a896 forest
+#02c39a leaf
+#eaebed grey
+*/
+
+
+body {margin: 0; font-family: 'PT Mono', monospace;}
+
+
+
+#welcome-section {
+min-height: 60vh;
+padding-top: 40vh;
+text-align: center;
+background-color: #17bebb;
+font-size: 16pt;
+color: #eaebed;
+text-shadow: 2px 2px 5px grey;
+}
+
+
+#navbar {
+z-index: 5;
+position: fixed;
+width: 100%;
+text-align: right;
+padding: 20px;
+background-color: #eaebed;
+}
+
+nav a {
+padding-right: 50px;
+}
+
+a {text-decoration:none;}
+
+ul {
+list-style-type: none;
+margin: 0;
+}
+
+h2 {margin:0; padding: 30px;}
+
+#projects {
+width: 100%;
+background-color: rgba(2, 195, 154, 0.39);
+margin: 0;
+color: #028090;
+}
+
+#projects ul {
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+}
+
+#projects li {
+display: flex;
+flex-direction: column;
+margin: 50px;
+text-align: center;
+background-color: #eaebed;
+line-height: 40px;
+border-radius: 5px 20px;
+}
+
+#profile-section {
+width: 100%;
+background-color: rgba(2, 128, 144, 1);
+height: 500px;
+}
+
+.screenshot {width: 300px;}
+.git-logo {height: 30px; position: relative; top: 10px; border-radius: 20px;}
+
+#form {
+margin: 0 auto;
+width: 50%;
+text-align: center;
+line-height: 30px;
+color: #eaebed;
+margin-top: 30px;
+}
+
+input, textarea {
+min-width: 50%;
+margin: 10px auto;
+display: block;
+}
+
+textarea {
+min-height: 150px;
+text-align: none;
+}
+
+::placeholder {
+font-family: sans-serif;
+}
+
+
+footer {
+width: 100%;
+padding: 20px;
+background-color: #005763;
+text-align: center;
+color: #eaebed;
+}
+
+.birb{
+margin:0; 
+top: -10px;}
+
+#purp-birb {
+width: 60px;
+position: relative;
+left: 150px;
+transition: top 0.5s;
+}
+
+#org-birb {
+width: 70px;
+position: relative;
+left: 100px;
+transition: top 0.5s;
+}
+
+#red-birb {
+width: 70px;
+position: relative;
+left: 40px;
+transition: top 0.5s;
+}
+
+
+#birb-box {
+width: 400px;
+position: fixed;
+right: 0;
+}
+
+mediaquery
+
+</style>
+</head>
+
+<body>
+<nav id="navbar">
+<a onmouseover="popRed()" onmouseout="resetPop()" id="background-link" href="">Background</a>
+<a onmouseover="popOrg()" onmouseout="resetPop()" id="project-link"href="">Projects</a>
+<a onmouseover="popPurp()" onmouseout="resetPop()" id="contact-link" href="">Contact</a>
+</nav>
+
+<div id="birb-box">
+<img class="birb" id="red-birb" src="red-birbs.png">
+<img class="birb" id="org-birb" src="org-birb.png">
+<img class="birb" id="purp-birb" src="purp-birbs.png">
+</div>
+
+<section id="welcome-section">
+<h1>Hello world! You found me!</h1>
+<p>I'm Kate.</p>
+<p>A fledgling web developer from Canada.</p>
+</section>
+
+<section id="projects">
+<h2>See Kate. <br>See Kate work.<br> See Kate's work here:</h2>
+
+<ul>
+
+<li class="project-title">Project One
+<img class="screenshot" src="capture.png">
+<a href=""><img href="" class="git-logo" src="github.png">View Code</a>
+</li>
+
+<li class="project-title">Project Two
+<img class="screenshot" src="capture.png">
+<a href=""><img class="git-logo" src="github.png">View Code</a>
+</li>
+
+<li class="project-title">Project Three
+<img class="screenshot" src="capture.png">
+<a href=""><img class="git-logo" src="github.png">View Code</a>
+</li>
+
+<li class="project-title">Project Four
+<img class="screenshot" src="capture.png">
+<a href=""><img class="git-logo" src="github.png">View Code</a>
+</li>
+
+</ul>
+</section>
+
+<section id="profile-section">
+<a id="profile-link">Github</a>
+<!-- form -->
+
+<form id="form">
+<label>Leave your info, and I'll be sure to get back to you!</label>
+<input type="text" name="name" placeholder="Your Name">
+<input type="email" name="email" placeholder="Example@domain.com">
+<textarea name="comments" id="comments" placeholder="Your questions or comments"></textarea>
+</form>
+
+</section>
+
+
+<footer>Last updated 1/11/19</footer>
+
+<script>
+
+function popRed() {
+document.getElementById("red-birb").style.top = 45 + "px";
+}
+
+function popOrg() {
+document.getElementById("org-birb").style.top = 48 + "px";
+}
+
+function popPurp() {
+document.getElementById("purp-birb").style.top = 45 + "px";
+}
+
+function resetPop() {
+document.getElementById("red-birb").style.top = -10 + "px";
+document.getElementById("org-birb").style.top = -10 + "px";
+document.getElementById("purp-birb").style.top = -10 + "px";
+}
+
+
+</script>
+
+</body>
+</html>
